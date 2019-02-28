@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>modifica</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="bg">
+    <ion-list >
+        <ion-item class="bg">
+        <ion-label fixed color="{{isbool? 'danger':''}}">Nome Profilo</ion-label>
+        <ion-input type='text' [(ngModel)]="nomeP"></ion-input>
+      </ion-item>
+       
+        <ion-item class="bg">
+          <ion-label>Volume: {{vol}}</ion-label>
+          <ion-range min="0" max="10" pin="true"[(ngModel)]="vol">
+            <ion-icon range-left small name="volume-up" ></ion-icon>
+            <ion-icon range-right name="volume-up"></ion-icon>
+          </ion-range>
+        </ion-item>
+        <ion-item class="bg">
+            <ion-label>Bassi: {{bass}}</ion-label>
+            <ion-range  min="-5" max="5" pin="true" step="1" snaps="true" value="0"[(ngModel)]="bass">
+              <ion-icon range-left small name="options"></ion-icon>
+              <ion-icon range-right name="options"></ion-icon>
+            </ion-range>
+          </ion-item>
+          <ion-item class="bg">
+              <ion-label>Alti: {{alti}}</ion-label>
+              <ion-range min="-5" max="5" pin="true" step="1" snaps="true" [(ngModel)]="alti">
+                <ion-icon range-left small name="options"></ion-icon>
+                <ion-icon range-right name="options"></ion-icon>
+              </ion-range>
+            </ion-item>
+      </ion-list>
+      <button ion-button (click)="back()">BACK</button>
+      <button ion-button (click)="save()">SALVA</button>
+</ion-content>
+<style>
+    ion-list + ion-list {
+      margin-top: 0;
+    }
+    .small-text {
+      font-size: 10px;
+    }
+  </style>

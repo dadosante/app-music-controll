@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+      <button ion-button menuToggle="">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Profili</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+  <ion-item *ngFor='let element of prArr; let i=index' class="bg">
+  <ion-card >
+<ion-card-content class="bg"> 
+ 
+    <ion-card-title>{{element.profilo}}
+    </ion-card-title>
+    <p>• Volume: {{element.volume}}</p>
+    <p>• Bassi: {{element.bassi}}</p>
+    <p>• Alti: {{element.alti}}</p>
+  </ion-card-content>
+  <ion-row no-padding>
+      <ion-col>
+        <button ion-button (click)="modifica(i)"clear small color="danger" icon-start>
+          <ion-icon name='settings'></ion-icon>
+          Modifica
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button (click)='applica(i)'clear small color="danger" icon-start>
+          <ion-icon name='musical-notes'></ion-icon>
+          Applica
+        </button>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col text-center>
+        <button ion-button  (click)="remove(i)" clear small color="danger" icon-start>
+          <ion-icon name='trash'></ion-icon>
+          Elimina
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card></ion-item>
+  <button ion-button round (click)="addProfilo()">AGGIUNGI PROFILO</button> 
+
+</ion-content>
